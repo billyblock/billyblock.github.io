@@ -6,7 +6,7 @@ body {
     min-height: 100vh; 
     margin: 0; 
     font-family: 'Montserrat', sans-serif; 
-    background-color: #121212;  /* Dark background */
+    background-color: #121212;
     color: #e0e0e0;  
 }
 
@@ -35,12 +35,10 @@ ul.menuBar {
     overflow: hidden;
 }
 
-/* Use this for the List Items */
 li.menuItem {
     float: left;
 }
 
-/* Use this for the Anchor Tags inside of the List items*/
 li a.menuItem {
     display: block;
     text-align: center;
