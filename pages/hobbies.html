@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Block | Fun & Hobbies</title>
+    <meta name="description" content="William Block portfolio fun page showcasing computers and gaming highlights">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Menu Bar -->
+    <nav>
+        <strong>William Block</strong>
+        <div class="nav-links">
+            <a href="../index.html">About</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="/pages/work.html">Work</a>
+            <a href="/pages/education.html">Education</a>
+            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
+            <a href="/pages/hobbies.html">Hobbies</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero fade-in">
+        <h1>Fun & Hobbies</h1>
+        <p>I love building PCs, competing in games, and exploring story-driven adventures!</p>
+    </section>
+
+    <!-- GAMING HIGHLIGHTS -->
+    <section class="fade-in">
+        <h3>Gaming Highlights</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="../photos/games/zombies.png" alt="Zombies World Record">
+                <h4>Zombies World Records</h4>
+                <p>I love speed running and my favorite record is my round 1000 on the original World at War Shi No
+                    Numa. </p>
+                <p>
+                    Check out my leaderboard achievements:
+                    <a href="https://zwr.gg/players/VmV4aW91cw/" target="_blank">View Records</a>
+                </p>
+            </div>
+            <div class="project-card">
+                <img src="../photos/games/r6_rank.png" alt="Rainbow Six Siege Highest Rank">
+                <h4>Competitive Games</h4>
+                <p>I play many competitive games such as Rainbow Six Siege, Overwatch, and Rocket League.</p>
+            </div>
+            <div class="project-card">
+                <img src="../photos/games/ror2.png" alt="Risk of Rain 2 Picture">
+                <h4>Single Player Games</h4>
+                <p>I also enjoy story-driven / single player games like Risk of Rain 2, God of War, and Baldur’s Gate 3
+                    in my free time.</p>
+            </div>
+            <div class="project-card">
+                <img src="../photos/games/mc.png" alt="Minecraft Screenshot">
+                <h4>Minecraft</h4>
+                <p>Who doesn't love to play Minecraft?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPUTER BUILDS -->
+    <section class="fade-in">
+        <h3>Favorite PC Builds</h3>
+        <p>I’ve built over 10 PCs with my brother-in-law, but these are some of my most recent and favorite builds:</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="../photos/PCs/pc4.jpg" alt="PC4 Build">
+                <h4>PC7 Build</h4>
+                <p>This was my first ever custom water cooling loop. It took me and my brother-in-law quite some time to
+                    bend each tube; however, I am more than happy with the outcome!</p>
+            </div>
+            <div class="project-card">
+                <img src="../photos/PCs/pc8.jpg" alt="PC8 Build">
+                <h4>PC8 Build</h4>
+                <p>This was my second to last PC. I now have the same case but upgraded to a MSI Project Zero B650,
+                    7800x3d, and 9700xt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="fade-in">
+        <p>
+            William Block |
+            <a href="mailto:wjamesblock@gmail.com">wjamesblock@gmail.com</a> ·
+            <a href="https://github.com/billyblock">GitHub</a>
+        </p>
+    </footer>
+
+    <!-- FADE-IN SCRIPT -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+    </script>
+
+</body>
+
+</html>

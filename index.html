@@ -1,55 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>About William Block</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Billy Block portfolio Website">
-    <meta name="author" content="Billy Block">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Computer, Science, Software, Engineer, Portfolio">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="William Block — Software Engineer Portfolio" />
+    <title>William Block</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Social Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-    <ul class="menuBar">
-        <li class="menuItem"><a class="menuItem" href="index.html">Home</a></li>
-        <div class="right">
-            <li class="menuItem"><a class="menuItem" href="/pages/computers.html">Computer Builds</a></li>
-            <li class="menuItem"><a class="menuItem" href="/pages/work.html">Work Experience</a></li>
-            <li class="menuItem"><a class="menuItem" href="/pages/education.html">Education</a></li>
-            <li class="menuItem"><a class="menuItem" href="/pages/projects.html">Personal Projects</a></li>
+
+    <!-- Menu Bar -->
+    <nav>
+        <strong>William Block</strong>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="/pages/work.html">Work</a>
+            <a href="/pages/education.html">Education</a>
+            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
+            <a href="/pages/hobbies.html">Hobbies</a>
         </div>
-    </ul>
+    </nav>
 
-    <div>
-        <h1>William Block</h1>
-        <h2>Who I am</h2>
-        <ul>
-            <li>Programmer, but don't let the title fool you - I'm really a professional problem solver.</li>
-            <li>I enjoy <a href="/pages/computers.html">building computers</a></li>
-            <li>I love video games, from story games like God of War and Baldur's Gate <br> to competitive games like
-                Rainbow Six Siege, Overwatch, or setting world records in COD Zombies!</li>
-            <li>Tutor and 
-                <a href="/pages/work.html">Instructor</a>, 
-                I enjoy teaching others about STEM!</li>
-        </ul>
-        <h2>What I do</h2>
-        <ul>
-            <li> <a href="/pages/work.html">Work with iDTech and NMU TSS</a></li>
-            <li> <a href="/pages/education.html">Education - Northern Michigan University</a></li>
-            <li> <a href="/pages/projects.html">Personal Projects</a></li>
-        </ul>
+    <!-- Landing -->
+    <section class="hero">
+        <h1>William Block | Software Engineer</h1>
+        <h2>I build systems, tools, and software that solve real problems.</h2>
 
-        <footer>
-            <p>
-                William Block |
-                <a href="mailto:wjamesblock@gmail.com">wjamesblock@gmail.com</a>|
-                <a href="/WilliamBlockResume.pdf" download="WilliamBlockResume.pdf"> Download my resume </a>
-            </p>
-        </footer>
-    </div>
+        <div class="social-icons">
+            <a href="https://github.com/billyblock?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/william-block-2bb731284/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="mailto:wjamesblock@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="about fade-in">
+        <h3>About Me</h3>
+        <p>
+            I'm William Block, a computer science graduate passionate about building
+            meaningful software, from operating system shells and custom
+            programming languages to full laboratory information systems.
+        </p>
+        <p>
+            I enjoy solving complex technical problems, teaching others about
+            programming, and creating tools that make real world workflows easier.
+        </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="fade-in">
+        <h3>Featured Projects</h3>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h4>NorthStar LIS</h4>
+                <p>Full system for managing lab workflows, records, and data handling.</p>
+                <a href="/pages/northstarlis.html">Preview -></a>
+            </div>
+
+            <div class="project-card">
+                <h4>Custom Programming Language</h4>
+                <p>Interpreter and language runtime implemented in Smalltalk.</p>
+                <a href="/pages/sad.html">Preview -></a>
+            </div>
+
+            <div class="project-card">
+                <h4>Linux Shell (CRASH)</h4>
+                <p>Feature‑rich shell with history, execution, signals, and fuzzy command search.</p>
+                <a href="/pages/crash.html">Preview -></a>
+            </div>
+
+            <div class="project-card">
+                <h4>Web Scraper</h4>
+                <p>Scrapes NBA player nationalities and salary from multiple websites, combining the datasets, and displays the average player salary by country.</p>
+                <a href="/pages/webscraper.html">Preview -></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 William Block ·
+            <a href="mailto:wjamesblock@gmail.com">wjamesblock@gmail.com</a> ·
+            <a href="https://github.com/billyblock">GitHub</a>
+        </p>
+    </footer>
+
+    <!-- Fade in -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        faders.forEach(el => observer.observe(el));
+    </script>
+
 </body>
 
 </html>

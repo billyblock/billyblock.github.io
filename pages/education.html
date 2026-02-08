@@ -1,57 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>About William Block Education</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Billy Block portfolio Website">
+    <meta name="description" content="Billy Block Portfolio Website">
     <meta name="author" content="Billy Block">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Computer, Science, Software, Engineer, Portfolio">
+    <title>William Block | Education</title>
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <ul class="menuBar">
-        <li class="menuItem"><a class="menuItem" href="../index.html">Home</a></li>
-        <div class="right">
-            <li class="menuItem"><a class="menuItem" href="computers.html">Computer Builds</a></li>
-            <li class="menuItem"><a class="menuItem" href="work.html">Work Experience</a></li>
-            <li class="menuItem"><a class="menuItem" href="education.html">Education</a></li>
-            <li class="menuItem"><a class="menuItem" href="projects.html">Personal Projects</a></li>
+    <!-- Menu Bar -->
+    <nav>
+        <strong>William Block</strong>
+        <div class="nav-links">
+            <a href="../index.html">About</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="/pages/work.html">Work</a>
+            <a href="/pages/education.html">Education</a>
+            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
+            <a href="/pages/hobbies.html">Hobbies</a>
         </div>
-    </ul>
+    </nav>
 
-    <div>
+    <!-- HERO / PAGE HEADER -->
+    <section class="hero fade-in">
         <h1>Northern Michigan University</h1>
-        <h3>Bachelor of Science in Computer Science | Minor in Mathematics<br>
-            Expected: Spring 2026 | GPA: 3.94
-            </h3>
-        <h2>Computer Science</h2>
-        <ul>
-            <li>Gained practical knowledge of software development lifecycle, requirements analysis, and prototyping for Software Engineering purposes.</li>
-            <li>Engineered diverse programs in C++, Java, Python, and SQL, <br>
-                including a 
-                <a href="https://github.com/zVexious/TransactionLog" target="_blank">checkbook</a>, a 
-                <a href="https://github.com/zVexious/Knights-Tour-Solver" target="_blank">chess application</a>, a 
-                maze solver, and a simulated hospital system. <br>
-                Skillfully implementing recursion, data structures, and algorithms.</li>
-        </ul>
-        <h2>Mathematics</h2>
-        <ul>
-            <li>Gained a deep understanding of fundamental mathematical concepts, <br>
-                including limits, derivatives, integrals, series, and multivariable calculus. </li>
-            <li>Developed essential problem-solving and analytical skills through logic and proofs, set theory, algorithms, and complexity. </li>
-        </ul>
+        <p class="hero-subtitle">
+            Bachelor of Science in Computer Science | Minor in Mathematics<br>
+            Expected Graduation: May 2026 | GPA: 3.96
+        </p>
+    </section>
 
-        <footer>
-            <p>
-                William Block |
-                <a href="mailto:wjamesblock@gmail.com">wjamesblock@gmail.com</a>|
-                <a href="../WilliamBlockResume.pdf" download="WilliamBlockResume.pdf"> Download my resume </a>
-            </p>
-        </footer>
-    </div>
+    <!-- COMPUTER SCIENCE SECTION -->
+    <section class="fade-in">
+        <h3>Computer Science</h3>
+        <ul>
+            <li><strong>Web Development:</strong> Created Full-Stack Apps like <a href="./northstarlis.html">NorthStar
+                    Lis</a> as well as my <a href="https://github.com/billyblock/CS101-final" target="_blank">Web Design
+                    Final
+                    Project</a>.</li>
+            <li><strong>Embedded Systems:</strong>
+                Developed a pulse-width modulated temperature controller using AVR assembly, C, and an Arduino.
+            </li>
+            <li><strong>Networking:</strong>
+                Built basic servers on Linux, implementing graph search algorithms for routing.
+            </li>
+            <li><strong>Systems Programming:</strong>
+                Designed C++, Java, Python, and SQL programs, including a <a
+                    href="https://github.com/billyblock/TransactionLog" target="_blank">Checkbook</a>,
+                <a href="https://github.com/billyblock/Knights-Tour-Solver" target="_blank">Chess Engine</a>, and <a
+                    href="./crash.html">Shell</a>.
+            </li>
+            <li><strong>Custom Programming Language:</strong>
+                Designed and implemented a compiler with my class for a <a href="./sad.html">Custom Programming
+                    Language</a>, including a
+                grammar, parser, pretty-printer, and code generator in SmallTalk.
+            </li>
+        </ul>
+    </section>
+
+    <!-- MATHEMATICS SECTION -->
+    <section class="fade-in">
+        <h3>Mathematics</h3>
+        <ul>
+            <li>
+                <strong>Calculus I-III:</strong> Mastery of limits, derivatives, integrals, sequences and series, partial
+                derivatives,
+                multiple integrals, and vector calculus.
+            </li>
+            <li>
+                <strong>Linear Algebra:</strong>Matrix operations, vector spaces, linear transformations, eigenvalues/eigenvectors,
+                and applications to computer graphics and systems of equations.
+            </li>
+            <li>
+                <strong>Discrete Mathematics:</strong> Logic, set theory, combinatorics, proofs, relations, functions, and graph
+                theory;
+                provided a strong foundation for algorithms and computer science theory.
+            </li>
+            <li>
+                Developed advanced problem-solving and analytical skills through rigorous proofs, algorithmic thinking,
+                and structured reasoning.
+            </li>
+            <li>
+                Applied mathematical concepts to programming projects, simulations, and computational problem-solving.
+            </li>
+        </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="fade-in">
+        <p>
+            William Block |
+            <a href="mailto:wjamesblock@gmail.com">wjamesblock@gmail.com</a> ·
+            <a href="https://github.com/billyblock">GitHub</a>
+        </p>
+    </footer>
+
+    <!-- FADE IN SCRIPT -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+    </script>
+
 </body>
+
+</html>

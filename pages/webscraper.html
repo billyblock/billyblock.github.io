@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NBA Web Scraper | William Block</title>
+    <meta name="description" content="NorthStar LIS - William Block Senior Project">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- Menu Bar -->
+    <nav>
+        <strong>William Block</strong>
+        <div class="nav-links">
+            <a href="../index.html">About</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="/pages/work.html">Work</a>
+            <a href="/pages/education.html">Education</a>
+            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
+            <a href="/pages/hobbies.html">Hobbies</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>NBA Average Salary per Country.</h1>
+        <h2>Web Scraper</h2>
+        <p>This project scrapes NBA player nationalities and salary from multiple websites, combining the datasets, and
+            displays the average player salary by country.</p>
+        <div class="hero-buttons">
+            <a class="secondary" href="https://github.com/billyblock/WebScraping" target="_blank">View on
+                GitHub</a>
+        </div>
+    </section>
+
+    <!-- PROJECT DESCRIPTION -->
+    <section class="fade-in">
+        <h3>Project Overview</h3>
+        <p>
+            This project uses Python and Selenium to navigate webpages, extract the data, and store it in JSON.
+            Afterwards, it displays the info using Matplotlib.
+        </p>
+    </section>
+
+    <section class="fade-in">
+        <h3>
+            Features:
+        </h3>
+        <ul>
+            <li>Scrapes player names and nationalities from RealGM.</li>
+            <li>Scrapes player salaries from HoopsHype.</li>
+            <li>Matches names across both data sources.</li>
+            <li>Stores the collected data in JSON files.</li>
+            <li>Calculates the average salary by country.</li>
+            <li>Generates a bar chart of the top earning countries.</li>
+        </ul>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="fade-in screenshots">
+        <h3>Shell Showcase</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="../photos/webscraper/webscraper.png" alt="Web Scraper Screenshot">
+                <h4>Web Scraper Bar Chart</h4>
+                <p>This shows the countries that, on average, have the highest paid players.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            William Block |
+            <a href="mailto:wjamesblock@gmail.com">wjamesblock@gmail.com</a> ·
+            <a href="https://github.com/billyblock">GitHub</a>
+        </p>
+    </footer>
+
+
+    <!-- Fade in -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        faders.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
