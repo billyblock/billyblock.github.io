@@ -6,29 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>William Block | Fun & Hobbies</title>
     <meta name="description" content="William Block portfolio fun page showcasing computers and gaming highlights">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23818cf8'/%3E%3Cstop offset='1' stop-color='%232dd4c8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2310151f'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='54' fill='url(%23g)' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Menu Bar -->
     <nav>
-        <strong>William Block</strong>
-        <div class="nav-links">
-            <a href="../index.html">About</a>
-            <a href="../index.html#projects">Projects</a>
-            <a href="/pages/work.html">Work</a>
-            <a href="/pages/education.html">Education</a>
-            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
-            <a href="/pages/hobbies.html">Hobbies</a>
+        <a class="nav-brand" href="../index.html">William Block</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#education">Education</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="/pages/hobbies.html" class="active">Hobbies</a>
+            </div>
+            <a class="nav-resume" href="/WilliamBlockSEResume.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="hero fade-in">
         <h1>Fun & Hobbies</h1>
-        <p>I love building PCs, competing in games, and exploring story-driven adventures!</p>
+        <p>Outside of code, I build PCs, compete in a few games, and get lost in story-driven adventures.</p>
     </section>
 
     <!-- GAMING HIGHLIGHTS -->
@@ -38,11 +46,10 @@
             <div class="project-card">
                 <img src="../photos/games/zombies.png" alt="Zombies World Record">
                 <h4>Zombies World Records</h4>
-                <p>I love speed running and my favorite record is my round 1000 on the original World at War Shi No
-                    Numa. </p>
+                <p>I speedrun Call of Duty Zombies. My favorite record is round 1000 on the original World at War
+                    map, Shi No Numa.</p>
                 <p>
-                    Check out my leaderboard achievements:
-                    <a href="https://zwr.gg/players/VmV4aW91cw/" target="_blank">View Records</a>
+                    <a href="https://zwr.gg/players/VmV4aW91cw/" target="_blank">View my leaderboard records</a>
                 </p>
             </div>
             <div class="project-card">
@@ -67,19 +74,18 @@
     <!-- COMPUTER BUILDS -->
     <section class="fade-in">
         <h3>Favorite PC Builds</h3>
-        <p>I’ve built over 10 PCs with my brother-in-law, but these are some of my most recent and favorite builds:</p>
+        <p>I've built over 10 PCs with my brother-in-law. Here are a couple of my recent favorites:</p>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="../photos/PCs/pc4.jpg" alt="PC4 Build">
+                <img src="../photos/PCs/pc4.jpg" alt="PC7 Build">
                 <h4>PC7 Build</h4>
-                <p>This was my first ever custom water cooling loop. It took me and my brother-in-law quite some time to
-                    bend each tube; however, I am more than happy with the outcome!</p>
+                <p>My first custom water-cooling loop. Bending each tube took a while, but I'm more than happy with
+                    the outcome.</p>
             </div>
             <div class="project-card">
                 <img src="../photos/PCs/pc8.jpg" alt="PC8 Build">
                 <h4>PC8 Build</h4>
-                <p>This was my second to last PC. I now have the same case but upgraded to a MSI Project Zero B650,
-                    7800x3d, and 9700xt.</p>
+                <p>My latest build. Same case as PC7, now upgraded to an MSI Project Zero B650, 7800X3D, and 9700 XT.</p>
             </div>
         </div>
     </section>
@@ -106,7 +112,24 @@
         }, appearOptions);
 
         faders.forEach(fader => { appearOnScroll.observe(fader); });
-    </script>
+    
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+</script>
 
 </body>
 

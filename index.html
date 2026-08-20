@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="William Block | Software Engineer" />
     <title>William Block</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23818cf8'/%3E%3Cstop offset='1' stop-color='%232dd4c8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2310151f'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='54' fill='url(%23g)' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Social Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Main CSS-->
@@ -19,74 +20,301 @@
 
     <!-- Menu Bar -->
     <nav>
-        <strong>William Block</strong>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="/pages/work.html">Work</a>
-            <a href="/pages/education.html">Education</a>
-            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
-            <a href="/pages/hobbies.html">Hobbies</a>
+        <a class="nav-brand" href="#">William Block</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+                <a href="/pages/hobbies.html">Hobbies</a>
+            </div>
+            <a class="nav-resume" href="/WilliamBlockSEResume.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 
     <!-- Landing -->
-    <section class="hero">
-        <h1>William Block | Software Engineer</h1>
-        <h2>I build systems, tools, and software that solve real problems.</h2>
+    <section class="hero hero-split">
+        <div class="hero-intro">
+            <h1>William Block</h1>
+            <h2>Software engineer who builds full-stack systems, developer tools, and the occasional programming language from scratch.</h2>
 
-        <div class="social-icons">
-            <a href="https://github.com/billyblock?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/william-block-2bb731284/" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="mailto:wjamesblock@gmail.com"><i class="fas fa-envelope"></i></a>
+            <div class="hero-buttons">
+                <a class="primary" href="/WilliamBlockSEResume.pdf" target="_blank">Resume</a>
+                <a class="secondary" href="mailto:wjamesblock@gmail.com">Email Me</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://github.com/billyblock?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/william-block-2bb731284/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:wjamesblock@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="facts-card">
+            <div class="fact">
+                <span class="fact-label">EDUCATION</span>
+                <span class="fact-value">B.S. Computer Science, NMU</span>
+            </div>
+            <div class="fact">
+                <span class="fact-label">GRADUATED</span>
+                <span class="fact-value">May 2026 · GPA 3.97</span>
+            </div>
+            <div class="fact">
+                <span class="fact-label">MOST RECENT ROLE</span>
+                <span class="fact-value">Dev Intern, Northcross Group</span>
+            </div>
+            <div class="fact">
+                <span class="fact-label">FOCUS</span>
+                <span class="fact-value">Full-Stack &amp; Systems</span>
+            </div>
         </div>
     </section>
 
     <!-- About Me -->
     <section id="about" class="about fade-in">
-        <h3>About Me</h3>
-        <p>
-            I'm William Block, a computer science graduate passionate about building
-            meaningful software, from operating system shells and custom
-            programming languages to full laboratory information systems.
-        </p>
-        <p>
-            I enjoy solving complex technical problems, teaching others about
-            programming, and creating tools that make real world workflows easier.
-        </p>
+        <div class="section-head">
+            <span class="eyebrow">Who I Am</span>
+            <h3>About Me</h3>
+        </div>
+        <div class="about-grid">
+            <div>
+                <p>
+                    I'm William Block, a computer science graduate who likes building software
+                    end to end, from operating system shells and custom programming languages
+                    to full-stack laboratory information systems.
+                </p>
+                <p>
+                    Most recently I built customer-facing workflow tools at Northcross Group
+                    and wrote test suites that pushed coverage across three projects to 80%.
+                    Outside of work I enjoy teaching programming, solving hard technical
+                    problems, and turning messy real-world workflows into something simpler.
+                </p>
+            </div>
+            <ul class="highlights">
+                <li><strong>80% test coverage</strong> added across 3 projects at Northcross Group using Cypress, Artillery, and Jest.</li>
+                <li><strong>1,000+ students</strong> taught programming and game design worldwide as an iD Tech instructor.</li>
+                <li><strong>100+ computers</strong> imaged and deployed via PXE boot for NMU's Technology Support Services.</li>
+                <li><strong>A full compiler</strong> for a custom language, written entirely in Smalltalk.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="fade-in">
+        <div class="section-head">
+            <span class="eyebrow">Toolbox</span>
+            <h3>Skills</h3>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Languages</h4>
+                <div class="tag-list">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Frontend</h4>
+                <div class="tag-list">
+                    <span class="tag">Vue.js</span>
+                    <span class="tag">Angular</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">Axios</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Backend</h4>
+                <div class="tag-list">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">JWT Auth</span>
+                    <span class="tag">REST APIs</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Desktop</h4>
+                <div class="tag-list">
+                    <span class="tag">Qt (C++)</span>
+                    <span class="tag">JavaFX</span>
+                    <span class="tag">Java Swing</span>
+                    <span class="tag">Tkinter</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Tools &amp; Testing</h4>
+                <div class="tag-list">
+                    <span class="tag">Git</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">JUnit</span>
+                    <span class="tag">pytest</span>
+                    <span class="tag">Jest</span>
+                    <span class="tag">Cypress</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="fade-in">
+        <div class="section-head">
+            <span class="eyebrow">Where I've Worked</span>
+            <h3>Experience</h3>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-date">May 2026 – August 2026</span>
+                <h4>Development &amp; Business Systems Intern</h4>
+                <h5>Northcross Group</h5>
+                <ul>
+                    <li>Developed a core "Engagements" workflow tracking system for a customer portal using React, Express, and MySQL.</li>
+                    <li>Created 100+ test suites using Cypress, Artillery, and Jest, increasing test coverage to 80% across 3 different projects.</li>
+                    <li>Managed feature delivery and codebase integrity via Jira, Confluence, Git, and GitHub during agile sprints.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">August 2024 – August 2026</span>
+                <h4>Software Support Assistant</h4>
+                <h5>NMU Technology Support Services</h5>
+                <ul>
+                    <li>Imaged and deployed 100+ computers via PXE boot and NMU's custom imaging system.</li>
+                    <li>Delivered technical support in person, by phone, and remotely via TeamViewer.</li>
+                    <li>Assisted in a campus-wide desktop replacement project, deploying 100+ new workstations.</li>
+                    <li>Documented IT procedures and troubleshooting steps using Confluence.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">March 2023 – March 2025</span>
+                <h4>Online Instructor</h4>
+                <h5>iD Tech</h5>
+                <ul>
+                    <li>Taught programming and game design to 1,000+ students worldwide using Java, C++, Lua, Godot, GDevelop, and Roblox Studio.</li>
+                    <li>Led 100+ projects from beginner to advanced, emphasizing creativity and first-principles problem solving.</li>
+                    <li>Adapted teaching style to accommodate diverse learning backgrounds and skill levels.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="fade-in">
-        <h3>Featured Projects</h3>
+        <div class="section-head">
+            <span class="eyebrow">What I've Built</span>
+            <h3>Featured Projects</h3>
+        </div>
 
-        <div class="projects-grid">
+        <div class="bento-grid">
 
-            <div class="project-card">
-                <h4>NorthStar LIS</h4>
-                <p>Full system for managing lab workflows, records, and data handling.</p>
-                <a href="/pages/northstarlis.html">Preview -></a>
+            <div class="project-card featured">
+                <img src="/photos/northstarlis/login.png" alt="NorthStar LIS login screen">
+                <div>
+                    <h4>NorthStar LIS</h4>
+                    <p>Full-stack laboratory information system for managing patients, specimen requisitions, and microbiology workcards in a clinical setting. Built as my senior capstone project.</p>
+                    <div class="tag-list">
+                        <span class="tag">Vue</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                    <a href="/pages/northstarlis.html">Read the case study -></a>
+                </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card compact">
+                <img src="/photos/sad/sad.png" alt="SAD custom language code sample">
                 <h4>Custom Programming Language</h4>
-                <p>Interpreter and language runtime implemented in Smalltalk.</p>
+                <p>SAD is a compiler and language runtime, implemented entirely in Smalltalk and compiling to C.</p>
+                <div class="tag-list">
+                    <span class="tag">Smalltalk</span>
+                    <span class="tag">C</span>
+                </div>
                 <a href="/pages/sad.html">Preview -></a>
             </div>
 
-            <div class="project-card">
+            <div class="project-card compact">
+                <img src="/photos/crash/crash.png" alt="CRASH shell screenshot">
                 <h4>Linux Shell (CRASH)</h4>
-                <p>Feature‑rich shell with history, execution, signals, and fuzzy command search.</p>
+                <p>A feature-rich shell with command history, background execution, signal handling, and fuzzy command search.</p>
+                <div class="tag-list">
+                    <span class="tag">C++</span>
+                    <span class="tag">Linux</span>
+                </div>
                 <a href="/pages/crash.html">Preview -></a>
             </div>
 
-            <div class="project-card">
-                <h4>Web Scraper</h4>
-                <p>Scrapes NBA player nationalities and salary from multiple websites, combining the datasets, and displays the average player salary by country.</p>
+            <div class="project-card compact">
+                <img src="/photos/webscraper/webscraper.png" alt="NBA salary web scraper bar chart">
+                <h4>NBA Web Scraper</h4>
+                <p>Scrapes player nationalities and salaries across sites, then charts average salary by country.</p>
+                <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">Selenium</span>
+                </div>
                 <a href="/pages/webscraper.html">Preview -></a>
             </div>
 
+            <div class="project-card compact">
+                <h4>Student Job Board</h4>
+                <p>A job board for students, built with Angular using purely object-oriented techniques.</p>
+                <div class="tag-list">
+                    <span class="tag">Angular</span>
+                    <span class="tag">TypeScript</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="fade-in">
+        <div class="section-head">
+            <span class="eyebrow">Where I Studied</span>
+            <h3>Education</h3>
+        </div>
+        <h4>Northern Michigan University</h4>
+        <p>Bachelor of Science in Computer Science, Minor in Mathematics. Graduated May 2026, GPA 3.97.</p>
+
+        <div class="about-grid education-grid">
+            <ul>
+                <li><strong>Web Development:</strong> Built full-stack apps like <a href="/pages/northstarlis.html">NorthStar LIS</a>, plus a <a href="https://github.com/billyblock/CS101-final" target="_blank">web design final project</a>.</li>
+                <li><strong>Embedded Systems:</strong> Developed a pulse-width modulated temperature controller using AVR assembly, C, and an Arduino.</li>
+                <li><strong>Networking:</strong> Built basic servers on Linux, implementing graph search algorithms for routing.</li>
+                <li><strong>Systems Programming:</strong> Designed C++, Java, Python, and SQL programs, including a <a href="https://github.com/billyblock/TransactionLog" target="_blank">checkbook app</a>, a <a href="https://github.com/billyblock/Knights-Tour-Solver" target="_blank">chess engine</a>, and a <a href="/pages/crash.html">shell</a>.</li>
+                <li><strong>Compiler Design:</strong> Designed and implemented a compiler with my class for a <a href="/pages/sad.html">custom programming language</a>, including a grammar, parser, pretty-printer, and code generator.</li>
+            </ul>
+            <ul>
+                <li><strong>Calculus I–III:</strong> Limits, derivatives, integrals, sequences and series, partial derivatives, multiple integrals, and vector calculus.</li>
+                <li><strong>Linear Algebra:</strong> Matrix operations, vector spaces, linear transformations, and eigenvalues/eigenvectors.</li>
+                <li><strong>Discrete Mathematics:</strong> Logic, set theory, combinatorics, proofs, relations, and graph theory.</li>
+                <li>Applied mathematical concepts to programming projects, simulations, and computational problem-solving.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in">
+        <div class="contact-banner">
+            <h3>Let's talk</h3>
+            <p>I'm looking for software engineering roles where I can keep building things end to end. Reach out if you'd like to chat.</p>
+            <div class="hero-buttons">
+                <a class="primary" href="mailto:wjamesblock@gmail.com">Email Me</a>
+                <a class="secondary" href="/WilliamBlockSEResume.pdf" target="_blank">Resume</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/billyblock?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/william-block-2bb731284/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </section>
 
@@ -99,7 +327,7 @@
         </p>
     </footer>
 
-    <!-- Fade in -->
+    <!-- Fade in + scroll spy -->
     <script>
         const faders = document.querySelectorAll('.fade-in');
 
@@ -112,6 +340,38 @@
         }, { threshold: 0.15 });
 
         faders.forEach(el => observer.observe(el));
+
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const spySections = document.querySelectorAll('section[id]');
+
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const match = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                    if (match) match.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        spySections.forEach(section => spy.observe(section));
+
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
     </script>
 
 </body>

@@ -6,30 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NorthStar LIS | William Block</title>
     <meta name="description" content="NorthStar LIS - William Block Senior Project">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23818cf8'/%3E%3Cstop offset='1' stop-color='%232dd4c8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2310151f'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='54' fill='url(%23g)' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Menu Bar -->
     <nav>
-        <strong>William Block</strong>
-        <div class="nav-links">
-            <a href="../index.html">About</a>
-            <a href="../index.html#projects">Projects</a>
-            <a href="/pages/work.html">Work</a>
-            <a href="/pages/education.html">Education</a>
-            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
-            <a href="/pages/hobbies.html">Hobbies</a>
+        <a class="nav-brand" href="../index.html">William Block</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#education">Education</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="/pages/hobbies.html">Hobbies</a>
+            </div>
+            <a class="nav-resume" href="/WilliamBlockSEResume.pdf" target="_blank">Resume</a>
         </div>
     </nav>
+
+    <span class="breadcrumb"><a href="../index.html#projects">&lt; All Projects</a></span>
 
     <section class="hero">
         <h1>NorthStar LIS</h1>
         <h2>Laboratory Information System | Senior Project</h2>
         <p>A full-featured lab management system built with modern web technologies, designed to streamline lab
             operations, patient record management, and result tracking.</p>
+        <div class="tag-list">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Bootstrap</span>
+        </div>
         <div class="hero-buttons">
             <a class="secondary" href="https://github.com/billyblock/LIS" target="_blank">View on GitHub</a>
         </div>
@@ -39,12 +55,12 @@
     <section class="fade-in">
         <h3>Project Overview</h3>
         <p>
-            NorthStar LIS is a full stack Laboratory Information System designed to manage patients, specimen
+            NorthStar LIS is a full-stack Laboratory Information System built to manage patients, specimen
             requisitions, and microbiology workcards in a clinical setting.
         </p>
         <p>
-            The system replaces traditional paper workflows that are still in use mostly in educational settings. The
-            system allows users to create, edit, track, and complete laboratory records efficently.
+            It replaces the paper workflows still common in educational labs, letting users create, edit, track, and
+            complete laboratory records efficiently.
         </p>
     </section>
 
@@ -53,11 +69,11 @@
             This project demonstrates:
         </h3>
         <ul>
-            <li>Full-Stack Software Engineering.</li>
-            <li>Database Design and relational data integrity.</li>
-            <li>Secure authentication and role based authorization.</li>
-            <li>Real world healthcare workflow modeling.</li>
-            <li>Friendly UX Design.</li>
+            <li>Full-stack software engineering.</li>
+            <li>Database design and relational data integrity.</li>
+            <li>Secure authentication and role-based authorization.</li>
+            <li>Real-world healthcare workflow modeling.</li>
+            <li>Friendly, task-oriented UX design.</li>
         </ul>
     </section>
     <!-- TECHNOLOGIES -->
@@ -121,7 +137,24 @@
         }, { threshold: 0.15 });
 
         faders.forEach(el => observer.observe(el));
-    </script>
+    
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+</script>
 </body>
 
 </html>

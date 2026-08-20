@@ -4,32 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Custom Programming Language | William Block</title>
-    <meta name="description" content="NorthStar LIS - William Block Senior Project">
+    <title>SAD | Custom Programming Language | William Block</title>
+    <meta name="description" content="SAD - a custom programming language written in Smalltalk, by William Block">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23818cf8'/%3E%3Cstop offset='1' stop-color='%232dd4c8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2310151f'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='54' fill='url(%23g)' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Menu Bar -->
     <nav>
-        <strong>William Block</strong>
-        <div class="nav-links">
-            <a href="../index.html">About</a>
-            <a href="../index.html#projects">Projects</a>
-            <a href="/pages/work.html">Work</a>
-            <a href="/pages/education.html">Education</a>
-            <a href="/WilliamBlockGeneralResume.pdf" target="_blank">Resume</a>
-            <a href="/pages/hobbies.html">Hobbies</a>
+        <a class="nav-brand" href="../index.html">William Block</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#education">Education</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="/pages/hobbies.html">Hobbies</a>
+            </div>
+            <a class="nav-resume" href="/WilliamBlockSEResume.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 
+    <span class="breadcrumb"><a href="../index.html#projects">&lt; All Projects</a></span>
+
     <section class="hero">
-        <h1>SAD | Custom Programming Langauge</h1>
+        <h1>SAD | Custom Programming Language</h1>
         <h2>Programming Language with Compiler | Principles of Programming Final Project</h2>
-        <p>SAD is a custom programming language implemented entirely in SmallTalk and compiling to C. The project
+        <p>SAD is a custom programming language implemented entirely in Smalltalk and compiling to C. The project
             explores the core principles of designing a programming language.</p>
+        <div class="tag-list">
+            <span class="tag">Smalltalk</span>
+            <span class="tag">C</span>
+            <span class="tag">Ohm</span>
+        </div>
         <div class="hero-buttons">
             <a class="secondary" href="https://github.com/billyblock/SAD-Programming-Language" target="_blank">View on
                 GitHub</a>
@@ -40,12 +55,12 @@
     <section class="fade-in">
         <h3>Project Overview</h3>
         <p>
-            SAD is a programming language that I made in my principles of programming class. It is written entirely in
-            SmallTalk; making it a purely object oriented compiler.
+            SAD is a programming language I built for my Principles of Programming class. It's written entirely in
+            Smalltalk, making it a purely object-oriented compiler.
         </p>
         <p>
-            This project makes a strong example of systems thinking, principles of programming languages, and object
-            oriented design.
+            It's a solid example of systems thinking, programming language design, and object-oriented architecture
+            in practice.
         </p>
     </section>
 
@@ -54,12 +69,12 @@
             Features:
         </h3>
         <ul>
-            <li>Custom syntax and grammar using Ohm.</li>
-            <li>Parser, interpreter, and Code Generator for executing programs written in SAD.</li>
-            <li>Fully OOP implementation. 99% of the code base is written in less than 8 lines in a method.</li>
-            <li>A pretty printer, formatting the code in a click of a button!</li>
-            <li>A symantic analyzer for catching errors.</li>
-            <li>If statements, Variables, Functions, Procedures (no returning), recursion, and loops.</li>
+            <li>Custom syntax and grammar defined using Ohm.</li>
+            <li>Parser, interpreter, and code generator for executing SAD programs.</li>
+            <li>Fully object-oriented implementation, with nearly every method under 8 lines.</li>
+            <li>A pretty printer that formats code with a single click.</li>
+            <li>A semantic analyzer for catching errors before they run.</li>
+            <li>If statements, variables, functions, procedures, recursion, and loops.</li>
         </ul>
     </section>
 
@@ -81,7 +96,6 @@
     </section>
 
     <!-- FOOTER -->
-    <!-- FOOTER -->
     <footer>
         <p>
             William Block |
@@ -89,7 +103,6 @@
             <a href="https://github.com/billyblock">GitHub</a>
         </p>
     </footer>
-
 
     <!-- Fade in -->
     <script>
@@ -104,7 +117,24 @@
         }, { threshold: 0.15 });
 
         faders.forEach(el => observer.observe(el));
-    </script>
+    
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+</script>
 </body>
 
 </html>
