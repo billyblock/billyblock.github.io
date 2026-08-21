@@ -565,6 +565,7 @@ section > p {
 
 .project-card img {
     max-width: 100%;
+    height: auto;
     border-radius: var(--radius-sm);
     margin-bottom: 15px;
     border: 1px solid var(--border);
