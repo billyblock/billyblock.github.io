@@ -11,7 +11,7 @@
 
     --text: #e9ecf3;
     --text-dim: #9aa3b8;
-    --text-faint: #636e83;
+    --text-faint: #8a93a8;
 
     --accent: #2dd4c8;
 
@@ -724,14 +724,19 @@ footer a:hover {
 }
 
 .social-icons a {
+    display: inline-flex;
     color: var(--text-dim);
-    font-size: 1.4rem;
     transition: 0.2s ease;
 }
 
 .social-icons a:hover {
     color: var(--accent);
     transform: scale(1.1);
+}
+
+.social-icons .icon {
+    width: 22px;
+    height: 22px;
 }
 
 /* =========================
