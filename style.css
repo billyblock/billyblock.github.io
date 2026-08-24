@@ -811,17 +811,23 @@ section > p {
 /* =========================
    CASE STUDY WALKTHROUGH
    ========================= */
+.case-study {
+    max-width: 1360px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
 .case-study-rows {
     display: flex;
     flex-direction: column;
-    gap: 72px;
+    gap: 88px;
     margin-top: 8px;
 }
 
 .case-row {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 52px;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 48px;
     align-items: center;
 }
 
@@ -848,46 +854,22 @@ section > p {
     border-color: var(--border-hover);
 }
 
-.browser-frame-bar {
-    display: flex;
-    gap: 7px;
-    padding: 14px 18px;
-    background: var(--surface-hover);
-    border-bottom: 1px solid var(--border);
-}
-
-.browser-frame-bar span {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--border-hover);
-}
-
-.browser-frame-bar span:nth-child(1) {
-    background: var(--accent-soft-strong);
-}
-
-.browser-frame-bar span:nth-child(3) {
-    background: var(--text-faint);
-    opacity: 0.5;
-}
-
 .browser-frame-media {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 26px;
+    padding: 14px;
     background: var(--bg);
-    min-height: 220px;
+    min-height: 360px;
 }
 
 .browser-frame-media img {
     max-width: 100%;
-    max-height: 380px;
+    max-height: 640px;
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .case-index {
