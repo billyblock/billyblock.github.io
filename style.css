@@ -1115,19 +1115,40 @@ ul li strong {
         display: flex;
     }
 
+    /* Dropdown overlays the page so opening it never resizes the nav.
+       Only opacity and transform animate, which avoids layout work and
+       re-blurring the sticky nav's backdrop-filter on every frame. */
     .nav-menu {
-        flex-basis: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        padding: 18px 5% 22px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        opacity: 0;
+        transform: translateY(-8px);
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.25s ease, visibility 0s linear 0.25s;
     }
 
     .nav-menu.open {
-        max-height: 420px;
-        margin-top: 18px;
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .nav-menu {
+            transition: none;
+        }
     }
 
     .nav-links {
