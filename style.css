@@ -1237,10 +1237,14 @@ ul li strong {
 
     .bento-grid .project-card.featured {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .bento-grid .project-card.featured img {
-        min-height: 220px;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        object-position: top;
     }
 
     .bento-grid .project-card.featured > div {
